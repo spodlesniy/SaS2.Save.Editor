@@ -1,0 +1,72 @@
+name: .NET Core Desktop Main and Feature Branches Workflow
+
+on:
+  push:
+    branches: [ "feature/*", "main" ]
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [ Release ]
+
+    runs-on: windows-latest
+
+    env:
+      Main_Project_Name: SaS2.Save.Editor
+      Dependency_Project_Repo: spodlesniy/SaS2.Save
+      Dependency_Project_Name: SaS2.Save
+      Solution_Name: ${{ env.Main_Project_Name }}.sln
+      Publish_Folder: bin
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        path: ${{ env.Main_Project_Name }}
+
+    - name: Checkout dependency repo
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        repository: ${{ env.Dependency_Project_Repo }}
+        path: ${{ env.Dependency_Project_Name }}
+
+    - run: |
+          cd ${{ env.Main_Project_Name }}
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    # Restore the application to populate the obj folder with RuntimeIdentifiers
+    - name: Restore the application
+      run: dotnet restore ${{ env.Solution_Name }}
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    - name: Build the application
+      run: dotnet build ${{ env.Solution_Name }} -c $env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    # - name: Execute unit tests
+    #   run: dotnet test --no-build --no-restore
+
+    - name: Publish the application
+      run: dotnet publish ${{ env.Solution_Name }} -c $env:Configuration --no-build --no-restore --output ${{ env.Publish_Folder }}
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        path: "bin"
+        name: ${{ env.Main_Project_Name }}
+      env:
+        Configuration: ${{ matrix.configuration }}
