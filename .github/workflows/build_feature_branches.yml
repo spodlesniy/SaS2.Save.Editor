@@ -18,7 +18,7 @@ jobs:
       Main_Project_Name: SaS2.Save.Editor
       Dependency_Project_Repo: spodlesniy/SaS2.Save
       Dependency_Project_Name: SaS2.Save
-      Solution_Name: ${{ env.Main_Project_Name }}.sln
+      Solution_Name: SaS2.Save.Editor.sln
       Publish_Folder: bin
 
     steps:
@@ -35,9 +35,6 @@ jobs:
         repository: ${{ env.Dependency_Project_Repo }}
         path: ${{ env.Dependency_Project_Name }}
 
-    - run: |
-          cd ${{ env.Main_Project_Name }}
-
     # Install the .NET Core workload
     - name: Install .NET Core
       uses: actions/setup-dotnet@v4
@@ -46,12 +43,10 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: dotnet restore ${{ env.Solution_Name }}
-      env:
-        Configuration: ${{ matrix.configuration }}
+      run: dotnet restore ${{ env.Main_Project_Name }}/${{ env.Solution_Name }}
 
     - name: Build the application
-      run: dotnet build ${{ env.Solution_Name }} -c $env:Configuration
+      run: dotnet build ${{ env.Main_Project_Name }}/${{ env.Solution_Name }} -c $env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
 
@@ -59,7 +54,7 @@ jobs:
     #   run: dotnet test --no-build --no-restore
 
     - name: Publish the application
-      run: dotnet publish ${{ env.Solution_Name }} -c $env:Configuration --no-build --no-restore --output ${{ env.Publish_Folder }}
+      run: dotnet publish ${{ env.Main_Project_Name }}/${{ env.Solution_Name }} -c $env:Configuration --no-build --no-restore --output ${{ env.Publish_Folder }}
       env:
         Configuration: ${{ matrix.configuration }}
 
