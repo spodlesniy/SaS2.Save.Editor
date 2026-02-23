@@ -105,7 +105,9 @@
             ClientSize = new Size(800, 450);
             Controls.Add(groupBoxLog);
             Controls.Add(groupBoxGameFolder);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FormRequirementsCheck";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Check Requirements";
             Shown += FormRequirementsCheck_Shown;
             groupBoxGameFolder.ResumeLayout(false);

@@ -1,4 +1,6 @@
-﻿namespace SaS2.Save.Editor.Controls
+﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+
+namespace SaS2.Save.Editor.Controls
 {
     public partial class SaveDetails : UserControl
     {
@@ -88,7 +90,16 @@
                 statItem.Parent = flowLayoutPanelStats;
             }
 
-            //playerItemList.SetItems(saveDetails.equipment.inventoryItems);
+            labelTimePlayedValue.Text = SaS2Stats.GetTimePlayedAsString(saveDetails.stats.timePlayed);
+            labelPlayerLevelValue.Text = saveDetails.stats.level.ToString();
+            labelNgLevelValue.Text = saveDetails.flags.ngLevel.ToString();
+
+            listBoxPlayerFlags.Items.Clear();
+            foreach (var flag in saveDetails.flags.flags)
+            {
+                listBoxPlayerFlags.Items.Add(flag);
+            }
+
             itemsGroupView.SetItems(saveDetails.equipment.inventoryItems);
         }
 

@@ -31,6 +31,16 @@
             components = new System.ComponentModel.Container();
             tabSaveDetails = new TabControl();
             tabSavePagePlainDetails = new TabPage();
+            groupBoxPlayerFlags = new GroupBox();
+            listBoxPlayerFlags = new ListBox();
+            groupBoxStatsAdd = new GroupBox();
+            tableStatsAdd = new TableLayoutPanel();
+            labelNgLevelValue = new Label();
+            labelNgLevel = new Label();
+            labelPlayerLevelValue = new Label();
+            labelPlayerLevel = new Label();
+            labelTimePlayedValue = new Label();
+            labelTimePlayed = new Label();
             groupBoxPlayerInfo = new GroupBox();
             checkBoxPlayerHazeBirnt = new CheckBox();
             numericPlayerSilver = new NumericUpDown();
@@ -53,6 +63,9 @@
             toolTipPlayerStatsWarning = new ToolTip(components);
             tabSaveDetails.SuspendLayout();
             tabSavePagePlainDetails.SuspendLayout();
+            groupBoxPlayerFlags.SuspendLayout();
+            groupBoxStatsAdd.SuspendLayout();
+            tableStatsAdd.SuspendLayout();
             groupBoxPlayerInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericPlayerSilver).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericPlayerXp).BeginInit();
@@ -75,6 +88,8 @@
             // 
             // tabSavePagePlainDetails
             // 
+            tabSavePagePlainDetails.Controls.Add(groupBoxPlayerFlags);
+            tabSavePagePlainDetails.Controls.Add(groupBoxStatsAdd);
             tabSavePagePlainDetails.Controls.Add(groupBoxPlayerInfo);
             tabSavePagePlainDetails.Controls.Add(groupBoxStats);
             tabSavePagePlainDetails.Controls.Add(groupBoxSaveInfo);
@@ -85,6 +100,115 @@
             tabSavePagePlainDetails.TabIndex = 0;
             tabSavePagePlainDetails.Text = "Base Info";
             tabSavePagePlainDetails.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxPlayerFlags
+            // 
+            groupBoxPlayerFlags.Controls.Add(listBoxPlayerFlags);
+            groupBoxPlayerFlags.Location = new Point(6, 232);
+            groupBoxPlayerFlags.Name = "groupBoxPlayerFlags";
+            groupBoxPlayerFlags.Size = new Size(373, 362);
+            groupBoxPlayerFlags.TabIndex = 3;
+            groupBoxPlayerFlags.TabStop = false;
+            groupBoxPlayerFlags.Text = "Player Flags";
+            // 
+            // listBoxPlayerFlags
+            // 
+            listBoxPlayerFlags.Dock = DockStyle.Fill;
+            listBoxPlayerFlags.FormattingEnabled = true;
+            listBoxPlayerFlags.ItemHeight = 15;
+            listBoxPlayerFlags.Location = new Point(3, 19);
+            listBoxPlayerFlags.Name = "listBoxPlayerFlags";
+            listBoxPlayerFlags.Size = new Size(367, 340);
+            listBoxPlayerFlags.TabIndex = 0;
+            // 
+            // groupBoxStatsAdd
+            // 
+            groupBoxStatsAdd.Controls.Add(tableStatsAdd);
+            groupBoxStatsAdd.Location = new Point(533, 6);
+            groupBoxStatsAdd.Name = "groupBoxStatsAdd";
+            groupBoxStatsAdd.Size = new Size(147, 220);
+            groupBoxStatsAdd.TabIndex = 2;
+            groupBoxStatsAdd.TabStop = false;
+            groupBoxStatsAdd.Text = "Player Add Stats";
+            // 
+            // tableStatsAdd
+            // 
+            tableStatsAdd.ColumnCount = 2;
+            tableStatsAdd.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            tableStatsAdd.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+            tableStatsAdd.Controls.Add(labelNgLevelValue, 1, 2);
+            tableStatsAdd.Controls.Add(labelNgLevel, 0, 2);
+            tableStatsAdd.Controls.Add(labelPlayerLevelValue, 1, 1);
+            tableStatsAdd.Controls.Add(labelPlayerLevel, 0, 1);
+            tableStatsAdd.Controls.Add(labelTimePlayedValue, 1, 0);
+            tableStatsAdd.Controls.Add(labelTimePlayed, 0, 0);
+            tableStatsAdd.Dock = DockStyle.Fill;
+            tableStatsAdd.Location = new Point(3, 19);
+            tableStatsAdd.Name = "tableStatsAdd";
+            tableStatsAdd.RowCount = 4;
+            tableStatsAdd.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
+            tableStatsAdd.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
+            tableStatsAdd.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
+            tableStatsAdd.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
+            tableStatsAdd.Size = new Size(141, 198);
+            tableStatsAdd.TabIndex = 0;
+            // 
+            // labelNgLevelValue
+            // 
+            labelNgLevelValue.AutoSize = true;
+            labelNgLevelValue.Location = new Point(84, 47);
+            labelNgLevelValue.Margin = new Padding(0, 3, 0, 3);
+            labelNgLevelValue.Name = "labelNgLevelValue";
+            labelNgLevelValue.Size = new Size(0, 15);
+            labelNgLevelValue.TabIndex = 12;
+            // 
+            // labelNgLevel
+            // 
+            labelNgLevel.AutoSize = true;
+            labelNgLevel.Location = new Point(0, 47);
+            labelNgLevel.Margin = new Padding(0, 3, 0, 3);
+            labelNgLevel.Name = "labelNgLevel";
+            labelNgLevel.Size = new Size(54, 15);
+            labelNgLevel.TabIndex = 11;
+            labelNgLevel.Text = "NG Level";
+            // 
+            // labelPlayerLevelValue
+            // 
+            labelPlayerLevelValue.AutoSize = true;
+            labelPlayerLevelValue.Location = new Point(84, 25);
+            labelPlayerLevelValue.Margin = new Padding(0, 3, 0, 3);
+            labelPlayerLevelValue.Name = "labelPlayerLevelValue";
+            labelPlayerLevelValue.Size = new Size(0, 15);
+            labelPlayerLevelValue.TabIndex = 10;
+            // 
+            // labelPlayerLevel
+            // 
+            labelPlayerLevel.AutoSize = true;
+            labelPlayerLevel.Location = new Point(0, 25);
+            labelPlayerLevel.Margin = new Padding(0, 3, 0, 3);
+            labelPlayerLevel.Name = "labelPlayerLevel";
+            labelPlayerLevel.Size = new Size(69, 15);
+            labelPlayerLevel.TabIndex = 9;
+            labelPlayerLevel.Text = "Player Level";
+            // 
+            // labelTimePlayedValue
+            // 
+            labelTimePlayedValue.AutoSize = true;
+            labelTimePlayedValue.Location = new Point(84, 3);
+            labelTimePlayedValue.Margin = new Padding(0, 3, 0, 3);
+            labelTimePlayedValue.Name = "labelTimePlayedValue";
+            labelTimePlayedValue.Size = new Size(0, 15);
+            labelTimePlayedValue.TabIndex = 1;
+            // 
+            // labelTimePlayed
+            // 
+            labelTimePlayed.AutoSize = true;
+            labelTimePlayed.Location = new Point(0, 3);
+            labelTimePlayed.Margin = new Padding(0, 3, 0, 3);
+            labelTimePlayed.Name = "labelTimePlayed";
+            labelTimePlayed.Size = new Size(72, 15);
+            labelTimePlayed.TabIndex = 0;
+            labelTimePlayed.Text = "Time Played";
             // 
             // groupBoxPlayerInfo
             // 
@@ -106,7 +230,7 @@
             // 
             checkBoxPlayerHazeBirnt.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             checkBoxPlayerHazeBirnt.CheckAlign = ContentAlignment.MiddleRight;
-            checkBoxPlayerHazeBirnt.Location = new Point(6, 113);
+            checkBoxPlayerHazeBirnt.Location = new Point(6, 110);
             checkBoxPlayerHazeBirnt.Name = "checkBoxPlayerHazeBirnt";
             checkBoxPlayerHazeBirnt.Size = new Size(108, 19);
             checkBoxPlayerHazeBirnt.TabIndex = 6;
@@ -116,7 +240,7 @@
             // numericPlayerSilver
             // 
             numericPlayerSilver.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            numericPlayerSilver.Location = new Point(100, 83);
+            numericPlayerSilver.Location = new Point(100, 80);
             numericPlayerSilver.Maximum = new decimal(new int[] { -294967296, 0, 0, 0 });
             numericPlayerSilver.Name = "numericPlayerSilver";
             numericPlayerSilver.Size = new Size(267, 23);
@@ -126,7 +250,7 @@
             // labelPlayerSilver
             // 
             labelPlayerSilver.AutoSize = true;
-            labelPlayerSilver.Location = new Point(6, 85);
+            labelPlayerSilver.Location = new Point(6, 82);
             labelPlayerSilver.Name = "labelPlayerSilver";
             labelPlayerSilver.Size = new Size(70, 15);
             labelPlayerSilver.TabIndex = 4;
@@ -135,7 +259,7 @@
             // numericPlayerXp
             // 
             numericPlayerXp.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            numericPlayerXp.Location = new Point(100, 54);
+            numericPlayerXp.Location = new Point(100, 51);
             numericPlayerXp.Maximum = new decimal(new int[] { -294967296, 0, 0, 0 });
             numericPlayerXp.Name = "numericPlayerXp";
             numericPlayerXp.Size = new Size(267, 23);
@@ -145,7 +269,7 @@
             // labelPlayerXp
             // 
             labelPlayerXp.AutoSize = true;
-            labelPlayerXp.Location = new Point(6, 56);
+            labelPlayerXp.Location = new Point(6, 53);
             labelPlayerXp.Name = "labelPlayerXp";
             labelPlayerXp.Size = new Size(56, 15);
             labelPlayerXp.TabIndex = 4;
@@ -289,6 +413,10 @@
             Size = new Size(1032, 628);
             tabSaveDetails.ResumeLayout(false);
             tabSavePagePlainDetails.ResumeLayout(false);
+            groupBoxPlayerFlags.ResumeLayout(false);
+            groupBoxStatsAdd.ResumeLayout(false);
+            tableStatsAdd.ResumeLayout(false);
+            tableStatsAdd.PerformLayout();
             groupBoxPlayerInfo.ResumeLayout(false);
             groupBoxPlayerInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericPlayerSilver).EndInit();
@@ -325,5 +453,17 @@
         private SaS2ItemsGroupsView itemsGroupView;
         private PictureBox playerStatsWarning;
         private ToolTip toolTipPlayerStatsWarning;
+        private GroupBox groupBoxStatsAdd;
+        private TableLayoutPanel tableStatsAdd;
+        private Label labelTimePlayed;
+        private Label labelTimePlayedValue;
+        private Label labelPlayerLevel;
+        private Label labelPlayerLevelValue;
+        private Label labelNgLevelValue;
+        private Label labelNgLevel;
+        private Label label1;
+        private Label label2;
+        private GroupBox groupBoxPlayerFlags;
+        private ListBox listBoxPlayerFlags;
     }
 }

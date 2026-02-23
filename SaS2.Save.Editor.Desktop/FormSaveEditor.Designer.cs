@@ -38,9 +38,9 @@
             buttonOpenWriteFile = new Button();
             dialogOpenWriteFile = new SaveFileDialog();
             panelFIlesAndDirs = new Panel();
-            labelGameDir = new Label();
-            textGameDir = new TextBox();
             labelSaveFilePath = new Label();
+            textGameDir = new TextBox();
+            labelGameDir = new Label();
             panelSaveDetails.SuspendLayout();
             panelFIlesAndDirs.SuspendLayout();
             SuspendLayout();
@@ -59,13 +59,13 @@
             textSaveFilePath.Location = new Point(91, 41);
             textSaveFilePath.Name = "textSaveFilePath";
             textSaveFilePath.ReadOnly = true;
-            textSaveFilePath.Size = new Size(954, 23);
+            textSaveFilePath.Size = new Size(743, 23);
             textSaveFilePath.TabIndex = 0;
             // 
             // buttonOpenSaveFile
             // 
             buttonOpenSaveFile.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonOpenSaveFile.Location = new Point(1051, 41);
+            buttonOpenSaveFile.Location = new Point(840, 41);
             buttonOpenSaveFile.Name = "buttonOpenSaveFile";
             buttonOpenSaveFile.Size = new Size(75, 23);
             buttonOpenSaveFile.TabIndex = 1;
@@ -76,11 +76,11 @@
             // textLogs
             // 
             textLogs.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textLogs.Location = new Point(12, 584);
+            textLogs.Location = new Point(12, 585);
             textLogs.Multiline = true;
             textLogs.Name = "textLogs";
             textLogs.ReadOnly = true;
-            textLogs.Size = new Size(1195, 132);
+            textLogs.Size = new Size(984, 132);
             textLogs.TabIndex = 4;
             // 
             // panelSaveDetails
@@ -90,7 +90,7 @@
             panelSaveDetails.Dock = DockStyle.Fill;
             panelSaveDetails.Location = new Point(0, 71);
             panelSaveDetails.Name = "panelSaveDetails";
-            panelSaveDetails.Size = new Size(1219, 657);
+            panelSaveDetails.Size = new Size(1008, 658);
             panelSaveDetails.TabIndex = 3;
             // 
             // saveDetails
@@ -98,7 +98,7 @@
             saveDetails.Dock = DockStyle.Fill;
             saveDetails.Location = new Point(0, 0);
             saveDetails.Name = "saveDetails";
-            saveDetails.Size = new Size(1219, 657);
+            saveDetails.Size = new Size(1008, 658);
             saveDetails.TabIndex = 3;
             saveDetails.Visible = false;
             // 
@@ -107,7 +107,7 @@
             labelNoSaveFileSelected.Dock = DockStyle.Fill;
             labelNoSaveFileSelected.Location = new Point(0, 0);
             labelNoSaveFileSelected.Name = "labelNoSaveFileSelected";
-            labelNoSaveFileSelected.Size = new Size(1219, 657);
+            labelNoSaveFileSelected.Size = new Size(1008, 658);
             labelNoSaveFileSelected.TabIndex = 0;
             labelNoSaveFileSelected.Text = "Save file is not selected";
             labelNoSaveFileSelected.TextAlign = ContentAlignment.MiddleCenter;
@@ -116,7 +116,7 @@
             // 
             buttonOpenWriteFile.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonOpenWriteFile.Enabled = false;
-            buttonOpenWriteFile.Location = new Point(1132, 41);
+            buttonOpenWriteFile.Location = new Point(921, 41);
             buttonOpenWriteFile.Name = "buttonOpenWriteFile";
             buttonOpenWriteFile.Size = new Size(75, 23);
             buttonOpenWriteFile.TabIndex = 2;
@@ -145,26 +145,8 @@
             panelFIlesAndDirs.Dock = DockStyle.Top;
             panelFIlesAndDirs.Location = new Point(0, 0);
             panelFIlesAndDirs.Name = "panelFIlesAndDirs";
-            panelFIlesAndDirs.Size = new Size(1219, 71);
+            panelFIlesAndDirs.Size = new Size(1008, 71);
             panelFIlesAndDirs.TabIndex = 5;
-            // 
-            // labelGameDir
-            // 
-            labelGameDir.AutoSize = true;
-            labelGameDir.Location = new Point(3, 15);
-            labelGameDir.Name = "labelGameDir";
-            labelGameDir.Size = new Size(59, 15);
-            labelGameDir.TabIndex = 3;
-            labelGameDir.Text = "Game Dir:";
-            // 
-            // textGameDir
-            // 
-            textGameDir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textGameDir.Location = new Point(91, 12);
-            textGameDir.Name = "textGameDir";
-            textGameDir.ReadOnly = true;
-            textGameDir.Size = new Size(954, 23);
-            textGameDir.TabIndex = 4;
             // 
             // labelSaveFilePath
             // 
@@ -175,15 +157,34 @@
             labelSaveFilePath.TabIndex = 5;
             labelSaveFilePath.Text = "Save File Path:";
             // 
+            // textGameDir
+            // 
+            textGameDir.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            textGameDir.Location = new Point(91, 12);
+            textGameDir.Name = "textGameDir";
+            textGameDir.ReadOnly = true;
+            textGameDir.Size = new Size(743, 23);
+            textGameDir.TabIndex = 4;
+            // 
+            // labelGameDir
+            // 
+            labelGameDir.AutoSize = true;
+            labelGameDir.Location = new Point(3, 15);
+            labelGameDir.Name = "labelGameDir";
+            labelGameDir.Size = new Size(59, 15);
+            labelGameDir.TabIndex = 3;
+            labelGameDir.Text = "Game Dir:";
+            // 
             // FormSaveEditor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1219, 728);
+            ClientSize = new Size(1008, 729);
             Controls.Add(panelSaveDetails);
             Controls.Add(textLogs);
             Controls.Add(panelFIlesAndDirs);
             Name = "FormSaveEditor";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Salt and Sacrifice v2.0.0.1 Save Editor";
             panelSaveDetails.ResumeLayout(false);
             panelFIlesAndDirs.ResumeLayout(false);
